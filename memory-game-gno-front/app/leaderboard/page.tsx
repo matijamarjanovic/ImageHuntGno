@@ -21,6 +21,9 @@ const Leaderboard: React.FC = () => {
                     );
 
                     const topscores = parseTopScores(response);
+
+                    topscores.sort((a, b) => b.points - a.points);
+
                     setTopScores(topscores);
                 }
             } catch (error) {
